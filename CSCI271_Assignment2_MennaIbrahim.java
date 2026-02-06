@@ -7,8 +7,7 @@
 * Date: Feb 5, 2026
 *
 * Purpose
-* This program reads a list of scores from an input file, counts how many
-* scores there are in the list, and computes their sum and average.
+* Doing basic arithmetic calculations on fractions but keeping the fractions as they are.
 *
 *************************************************************************/
 
