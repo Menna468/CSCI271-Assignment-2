@@ -1,19 +1,59 @@
 public class Fraction {
     
-        private long numerator;
-        private long denominator;
+        private long numerator;   //declaring a private numerator variable
+        private long denominator; //declaring a private denonminator variable
 
+        /*****************************<getNumerator>****************************
+        * Description: Getter for numerator
+        *
+        * Parameters: none
+        *
+        * Pre: cannot be a string
+        *
+        * Post: no changes
+        *
+        * Returns: the value of the numerator as a long
+        *
+        * Called by: none
+        * Calls: none
+        ************************************************************************/
         public long getNumerator() {
             return numerator;
 
         }
-
+        /*****************************<getDenominator>****************************
+        * Description: Getter for denominator
+        *
+        * Parameters: none
+        *
+        * Pre: cannot be a string
+        *
+        * Post: no changes
+        *
+        * Returns: the value of the denominator as a long
+        *
+        * Called by: none
+        * Calls: none
+        ************************************************************************/
         public long getDenomirator() {
             return denominator;
 
         }
 
-
+        /*****************************<Fraction>****************************
+        * Description: fraction constructor that takes two parameters
+        *
+        * Parameters: a(private numerator), b(private denominator)
+        *
+        * Pre: must be a number
+        *
+        * Post: goes through the if and else statments to determine the sign and the gcd of the fraction
+        *
+        * Returns: the value of the denominator as a long
+        *
+        * Called by: test cases
+        * Calls: gcd
+        ************************************************************************/
         public Fraction(long a, long b) {
             this.numerator = a;
             this.denominator = b;
@@ -35,6 +75,21 @@ public class Fraction {
             }
         }
 
+
+        /*****************************<Fraction>****************************
+        * Description: fraction constructor that takes one parameter, and sets the denom to 1
+        *
+        * Parameters: a(private numerator)
+        *
+        * Pre: must be a number
+        *
+        * Post: sets the numerator to a and denominator to 1
+        *
+        * Returns: the value of the denominator as a long
+        *
+        * Called by: test cases
+        * Calls: none
+        ************************************************************************/
         public Fraction(long a) {
             this.numerator = a;
             this.denominator = 1;
@@ -42,47 +97,116 @@ public class Fraction {
 
 
     
-
+    /*****************************<add>****************************
+        * Description: adds fractions
+        *
+        * Parameters: inFraction
+        *
+        * Pre: doesn't add
+        *
+        * Post: gets a commong denominator and then add fractions 
+        *
+        * Returns: the added fractions
+        *
+        * Called by: test cases only
+        * Calls: Fraction
+        ************************************************************************/
     public Fraction add(Fraction inFraction) {
         Fraction addFraction;
         
-        long commonDenom = this.denominator * inFraction.denominator;
-        long num1 = this.numerator * inFraction.denominator;
-        long num2 = inFraction.numerator * this.denominator;
-        long addition = (num1 + num2);
-        addFraction = new Fraction (addition, commonDenom);
-        return addFraction;
+        long commonDenom = this.denominator * inFraction.denominator; //gets common denominator
+        long num1 = this.numerator * inFraction.denominator; //multiplies the first numerator by the second denominator 
+        long num2 = inFraction.numerator * this.denominator; //multiplies the second numerator by the first denominator
+        long addition = (num1 + num2); //adds both numerators 
+        addFraction = new Fraction (addition, commonDenom); //puts them together
+        return addFraction; //returns the added fraction
         
     }
 
+        /*****************************<subtract>****************************
+        * Description: subtracts fractions
+        *
+        * Parameters: inFraction
+        *
+        * Pre: doesn't subtract
+        *
+        * Post: gets a commong denominator and then subtract fractions 
+        *
+        * Returns: the subtracted fractions
+        *
+        * Called by: test cases only
+        * Calls: Fraction
+        ************************************************************************/
     public Fraction subtract(Fraction inFraction) {
         Fraction subFraction;
         
-        long commonDenom = this.denominator * inFraction.denominator;
-        long num1 = this.numerator * inFraction.denominator;
-        long num2 = inFraction.numerator * this.denominator;
-        long subtraction = (num1 - num2);
-        subFraction = new Fraction (subtraction, commonDenom);
-        return subFraction;
+        long commonDenom = this.denominator * inFraction.denominator; //gets common denominator
+        long num1 = this.numerator * inFraction.denominator; //multiplies the first numerator by the second denominator
+        long num2 = inFraction.numerator * this.denominator; //multiplies the second numerator by the first denominator
+        long subtraction = (num1 - num2); //subtracts both numerators
+        subFraction = new Fraction (subtraction, commonDenom); //puts them together
+        return subFraction; //returns the subtracted fraction
 
     }
 
+    /*****************************<multiply>****************************
+    * Description: multiplies fractions
+    *
+    * Parameters: inFraction
+    *
+    * Pre: doesn't multiply
+    *
+    * Post: multiply fractions
+    *
+    * Returns: a new fraction after being multiplied 
+    *
+    * Called by: pow and test cases
+    * Calls: Fraction
+    ************************************************************************/
     public Fraction multiply(Fraction inFraction) {
-        long top = (this.numerator * inFraction.numerator);
-        long bottom = (this.denominator * inFraction.denominator);
+        long top = (this.numerator * inFraction.numerator); //multiplies both numerators 
+        long bottom = (this.denominator * inFraction.denominator); //multiplies both denominators
 
-        return new Fraction(top, bottom);
+        return new Fraction(top, bottom); //returns both num and denom after the multiplication process
 
     }
 
+    /*****************************<divide>****************************
+    * Description: divides fractions. It multiplies the first fraction by the reciprocal of the second fraction
+    *
+    * Parameters: inFraction
+    *
+    * Pre: doesn't divide
+    *
+    * Post: divide fractions
+    *
+    * Returns: a new fraction after being divided
+    *
+    * Called by: test cases only
+    * Calls: Fraction
+    ************************************************************************/
     public Fraction divide(Fraction inFraction) {
-        long top = this.numerator * inFraction.denominator;
-        long bottom = this.denominator * inFraction.numerator;
+        long top = this.numerator * inFraction.denominator; //multiplies the first num by the second denom
+        long bottom = this.denominator * inFraction.numerator; //multiplies the first denom by the second num
 
-        return new Fraction(top, bottom);
+        return new Fraction(top, bottom); //returns both num and denom after the division process
 
     }
 
+    /*****************************<pow>****************************
+    * Description: returns a new fraction of this fraction raised to the n power
+    *
+    * Parameters: n
+    *
+    * Pre: nothing
+    *
+    * Post: gives a new fraction that is raised to the n power
+    *
+    * Returns: a new fraction of this fraction raised to the n power
+    *
+    * Called by: test cases only
+    * Calls: multiply, Fraction
+    ************************************************************************/
    public Fraction pow(int n) {
         Fraction base = new Fraction(numerator, denominator);
 
@@ -105,34 +229,70 @@ public class Fraction {
 
     }
 
+
+    /*****************************<negate>****************************
+    * Description: negates the fraction
+    *
+    * Parameters: none
+    *
+    * Pre: nothing
+    *
+    * Post: negate fractions
+    *
+    * Returns: negates a fraction then returns the new fraction
+    *
+    * Called by: test cases only
+    * Calls: Fraction
+    ************************************************************************/
     public Fraction negate() {
-        return new Fraction(this.numerator * -1, this.denominator);
+        return new Fraction(this.numerator * -1, this.denominator); //returns the num multiplied by -1
         
     }
 
+
+    /*****************************<toString>****************************
+    * Description: converts everything to a string
+    *
+    * Parameters: none
+    *
+    * Pre: the fractions are numbers 
+    *
+    * Post: the fractions are read as strings
+    *
+    * Returns: a string value of the fractions
+    *
+    * Called by: none
+    * Calls: none
+    ************************************************************************/
     @Override
     public String toString() {
         
+        // if denom was a negative number and num was positive, it returns the num as negative and denom as positive
         if (numerator > 0 && denominator < 0) {
-            return "-" + numerator + "/" + denominator;
+            return "-" + numerator + "/" + denominator;  
         }
         
+        //if dividing a positive number over 0 then it returns "Infinity"
         else if (numerator > 0 && denominator == 0) {
             return "Infinity";
         }
         
+        //if dividning a negative number over 0 then it returns "-Infinity"
         else if (numerator < 0 && denominator == 0) {
             return "-Infinity";
         }
         
+        //if dividing by 1 then it returns the num
         else if (denominator == 1) {
             return "" + numerator;
         }
         
+        //if dividing 0 over 0 then it returns "NaN"
         else if (numerator == 0 && denominator == 0) {
-            return "Nan";
+            return "NaN";
         }
         
+        //otherwise it returns the fraction as num over denom
         else {
             return "" + numerator + "/" + denominator;
         }
@@ -141,6 +301,20 @@ public class Fraction {
 
     }
     
+    /*****************************<gcd>****************************
+    * Description: to get the greatest common divisor, to reduce the fraction into a normalized form. (Taken from the instructions sheet)
+    *
+    * Parameters: a, b
+    *
+    * Pre: nothing
+    *
+    * Post: reduces the fraction a normalized form
+    *
+    * Returns: the reduced fraction
+    *
+    * Called by: Fraction
+    * Calls: none
+    ************************************************************************/
     public static long gcd(long a, long b) {
         if (a < 0) {
             a = -1;

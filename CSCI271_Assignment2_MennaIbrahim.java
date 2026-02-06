@@ -1,5 +1,5 @@
 /*************************************************************************
-* Project 1 for CSCI 271-001 Spring 2026
+* Project 2 for CSCI 271-001 Spring 2026
 *
 * Author: Menna Ibrahim
 * OS: Mac
@@ -31,7 +31,7 @@
 * Menna Ibrahim
 ********************************************************************/
 
-public class CSCI271_Assignment1_MennaIbrahim {
+public class CSCI271_Assignment2_MennaIbrahim {
     public static void main(String[] args) {
         /*---------------------------Test Case 1---------------------------*/
         //uses add,multiply, and divide
@@ -46,7 +46,9 @@ public class CSCI271_Assignment1_MennaIbrahim {
         Fraction d = new Fraction(16);
         Fraction e = new Fraction(2);
         Fraction results2 = d.multiply(e).negate();
+        Fraction results2a = d.divide(e).negate();
         System.out.println(results2);
+        System.out.println(results2a);
 
 
         /*---------------------------Test Cases 3---------------------------*/
@@ -84,7 +86,7 @@ public class CSCI271_Assignment1_MennaIbrahim {
         System.out.println(result6);
 
 
-        /*---------------------------Test Case 5---------------------------*/
+        /*---------------------------Test Case 6---------------------------*/
         //uses pow
         Fraction c1 = new Fraction(2);
         Fraction result7 = c1.pow(3);
