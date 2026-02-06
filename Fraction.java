@@ -58,7 +58,7 @@ public class Fraction {
             this.numerator = a;
             this.denominator = b;
             if (b == 0) {
-                numerator = Long.signum(a);
+                numerator = Long.signum(a); //from the TA
             }
 
             else if (a == 0) {
@@ -67,7 +67,7 @@ public class Fraction {
 
             else {
                 long sign = (Long.signum(a)) * (Long.signum(b));
-                numerator = Math.abs(numerator);
+                numerator = Math.abs(numerator); // from TA
                 denominator = Math.abs(denominator);
                 long g = gcd(numerator, denominator);
                 this.numerator = (numerator / g) * sign;
