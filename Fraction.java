@@ -41,7 +41,7 @@ public class Fraction {
         }
 
         /*****************************<Fraction>****************************
-        * Description: fraction constructor that takes two parameters
+        * Description: fraction constructor that takes two parameters. To set the fields in my class, so nothing else can modify numerator and denominator
         *
         * Parameters: a(private numerator), b(private denominator)
         *
@@ -77,7 +77,7 @@ public class Fraction {
 
 
         /*****************************<Fraction>****************************
-        * Description: fraction constructor that takes one parameter, and sets the denom to 1
+        * Description: fraction constructor that takes one parameter, and sets the denom to 1. To set the field in my class, so nothing else can modify numerator
         *
         * Parameters: a(private numerator)
         *

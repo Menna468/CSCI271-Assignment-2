@@ -30,7 +30,7 @@
 * Menna Ibrahim
 ********************************************************************/
 
-public class CSCI271_Assignment2_MennaIbrahim {
+public class CSCI271_Assignment2_MennaIbrahim{
     public static void main(String[] args) {
         /*---------------------------Test Case 1---------------------------*/
         //uses add,multiply, and divide
@@ -91,6 +91,13 @@ public class CSCI271_Assignment2_MennaIbrahim {
         Fraction result7 = c1.pow(3);
         System.out.println(result7);
 
+
+        /*---------------------------Test Case 7---------------------------*/
+        //uses add
+        Fraction d1 = new Fraction(6,15);
+        Fraction d2 = new Fraction(9,15);
+        Fraction result8 = d1.add(d2);
+        System.out.println(result8);
         
     }
 }
