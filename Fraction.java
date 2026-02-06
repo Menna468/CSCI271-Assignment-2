@@ -35,7 +35,7 @@ public class Fraction {
         * Called by: none
         * Calls: none
         ************************************************************************/
-        public long getDenomirator() {
+        public long getDenominator() {
             return denominator;
 
         }
